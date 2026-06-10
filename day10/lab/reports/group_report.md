@@ -1,13 +1,13 @@
 # Báo Cáo Nhóm — Lab Day 10: Data Pipeline & Data Observability
 
-**Tên nhóm:** ___________  
+**Tên nhóm:** Cá nhân
 **Thành viên:**
 | Tên | Vai trò (Day 10) | Email |
 |-----|------------------|-------|
-| Học viên | All | hocvien@example.com |
+| Vũ Xuân Bách (2A202600776) | All | vuxuanbach@example.com |
 
-**Ngày nộp:** ___________  
-**Repo:** ___________  
+**Ngày nộp:** 2026-06-10  
+**Repo:** Github
 **Độ dài khuyến nghị:** 600–1000 từ
 
 ---

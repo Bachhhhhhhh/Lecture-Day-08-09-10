@@ -1,6 +1,6 @@
 # Kiến trúc pipeline — Lab Day 10
 
-**Nhóm:** Cá nhân (Học viên)  
+**Nhóm:** Cá nhân (Vũ Xuân Bách - 2A202600776)  
 **Cập nhật:** 2026-06-10
 
 ---
@@ -27,11 +27,11 @@ Mỗi lần chạy sẽ sinh ra `run_id` được ghi vào log, manifest, csv, v
 
 | Thành phần | Input | Output | Owner nhóm |
 |------------|-------|--------|--------------|
-| Ingest | `policy_export_dirty.csv` | File log, run_id | Học viên |
-| Transform | List of dicts raw | Cleaned rows, Quarantine rows | Học viên |
-| Quality | Cleaned rows | Expectation Results, Halt flag | Học viên |
-| Embed | Cleaned rows | Upserted ChromaDB Collection | Học viên |
-| Monitor | Manifest file | Freshness status (PASS/FAIL) | Học viên |
+| Ingest | `policy_export_dirty.csv` | File log, run_id | Vũ Xuân Bách |
+| Transform | List of dicts raw | Cleaned rows, Quarantine rows | Vũ Xuân Bách |
+| Quality | Cleaned rows | Expectation Results, Halt flag | Vũ Xuân Bách |
+| Embed | Cleaned rows | Upserted ChromaDB Collection | Vũ Xuân Bách |
+| Monitor | Manifest file | Freshness status (PASS/FAIL) | Vũ Xuân Bách |
 
 ---
 

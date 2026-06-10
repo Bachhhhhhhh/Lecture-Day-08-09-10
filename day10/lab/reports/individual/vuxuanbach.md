@@ -1,6 +1,6 @@
 # Báo Cáo Cá Nhân — Lab Day 10: Data Pipeline & Observability
 
-**Họ và tên:** Học viên  
+**Họ và tên:** Vũ Xuân Bách (2A202600776)  
 **Vai trò:** All — Quản lý toàn bộ pipeline từ Ingestion, Cleaning, Embed đến Monitoring  
 **Ngày nộp:** 2026-06-10  
 **Độ dài yêu cầu:** **400–650 từ** (ngắn hơn Day 09 vì rubric slide cá nhân ~10% — vẫn phải đủ bằng chứng)
@@ -9,7 +9,7 @@
 
 > Viết **"tôi"**, đính kèm **run_id**, **tên file**, **đoạn log** hoặc **dòng CSV** thật.  
 > Nếu làm phần clean/expectation: nêu **một số liệu thay đổi** (vd `quarantine_records`, `hits_forbidden`, `top1_doc_expected`) khớp bảng `metric_impact` của nhóm.  
-> Lưu: `reports/individual/[ten_ban].md`
+> Lưu: `reports/individual/vuxuanbach.md`
 
 ---
 
