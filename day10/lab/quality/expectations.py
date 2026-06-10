@@ -112,5 +112,32 @@ def run_expectations(cleaned_rows: List[Dict[str, Any]]) -> Tuple[List[Expectati
         )
     )
 
+    # E7: có ít nhất 1 chunk thuộc access_control_sop
+    has_access_control = any(r.get("doc_id") == "access_control_sop" for r in cleaned_rows)
+    results.append(
+        ExpectationResult(
+            "min_one_access_control",
+            has_access_control,
+            "halt",
+            "Missing access_control_sop",
+        )
+    )
+
+    # E8: không chứa các tiền tố gây nhiễu
+    noisy = [
+        r
+        for r in cleaned_rows
+        if "Nội dung không rõ ràng:" in (r.get("chunk_text") or "") or "!!!" in (r.get("chunk_text") or "")
+    ]
+    ok8 = len(noisy) == 0
+    results.append(
+        ExpectationResult(
+            "no_noisy_prefixes",
+            ok8,
+            "halt",
+            f"violations={len(noisy)}",
+        )
+    )
+
     halt = any(not r.passed and r.severity == "halt" for r in results)
     return results, halt

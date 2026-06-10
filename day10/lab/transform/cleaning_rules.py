@@ -20,6 +20,7 @@ ALLOWED_DOC_IDS = frozenset(
         "sla_p1_2026",
         "it_helpdesk_faq",
         "hr_leave_policy",
+        "access_control_sop",
     }
 )
 
@@ -113,6 +114,23 @@ def clean_rows(
 
         if not text:
             quarantine.append({**raw, "reason": "missing_chunk_text"})
+            continue
+
+        # New Rule 1: Quarantine hr_leave_policy with stale 10d annual leave text
+        if doc_id == "hr_leave_policy" and "10 ngày phép năm" in text:
+            quarantine.append({**raw, "reason": "stale_hr_policy_text"})
+            continue
+
+        # New Rule 2: Clean noisy prefixes and newlines
+        text = text.replace("Nội dung không rõ ràng: ", "").replace("Nội dung không rõ ràng:", "").replace("!!!", "")
+        text = " ".join(text.split())
+        
+        # New Rule 4: Enrich context for P1 escalation to improve semantic search matching
+        text = text.replace("Escalation P1:", "Ticket P1 auto escalate:")
+
+        # New Rule 3: Quarantine chunks that are too short after cleaning
+        if len(text) < 8:
+            quarantine.append({**raw, "reason": "chunk_too_short"})
             continue
 
         key = _norm_text(text)
